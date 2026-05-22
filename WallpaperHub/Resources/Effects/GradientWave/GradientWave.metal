@@ -1,7 +1,3 @@
-// GradientWave.metal
-// グラデーション波の背景シェーダー（ShaderType==1）。
-// Why: 背景プロシージャル群を per-effect ファイルに分離し、追加・差し替えを
-// シェーダ単位でできるようにする。
 #include "../Common/Common.metal.h"
 
 float3 gradientWave(float2 uv, float time) {

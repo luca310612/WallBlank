@@ -1,6 +1,3 @@
-// Pixelate.metal
-// ピクセレートエフェクト（画面をモザイク/ドット絵風に変換する UV 量子化）。
-// Why: ポストエフェクトを per-effect ファイルに分離。
 #include "../Common/Common.metal.h"
 
 float2 pixelateUV(float2 uv, constant EffectUniforms &fx) {

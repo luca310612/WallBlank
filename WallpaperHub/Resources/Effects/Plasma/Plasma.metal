@@ -1,6 +1,3 @@
-// Plasma.metal
-// プラズマの背景シェーダー（ShaderType==2）。
-// Why: 背景プロシージャル群を per-effect ファイルに分離。
 #include "../Common/Common.metal.h"
 
 float3 plasma(float2 uv, float time) {

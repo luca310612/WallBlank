@@ -1,6 +1,3 @@
-// ChromaticAberration.metal
-// 色収差エフェクト（RGB各チャンネルを異なる方向にオフセットして色ずれを表現）。
-// Why: ポストエフェクトを per-effect ファイルに分離。
 #include "../Common/Common.metal.h"
 
 float3 chromaticAberration(texture2d<float> tex, sampler s, float2 uv,
