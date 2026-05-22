@@ -1,0 +1,78 @@
+# ==========================================================
+# 機密情報（絶対に commit しない）
+# ==========================================================
+.env
+.env.*
+*.env
+GoogleService-Info.plist
+google-services.json
+serviceAccountKey*.json
+*.p12
+*.pem
+*.key
+*.cer
+*.keystore
+*.jks
+*.mobileprovision
+*.provisionprofile
+credentials
+*.credentials
+*secret*
+*Secret*
+*.token
+
+# ==========================================================
+# macOS
+# ==========================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ==========================================================
+# Xcode / Swift (ビルド成果物 / ユーザー固有)
+# ==========================================================
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+.swiftpm/
+Package.resolved
+.sourcekit-lsp/
+buildServer.json
+
+# ==========================================================
+# Rust / Cargo
+# ==========================================================
+target/
+**/target/
+**/*.rs.bk
+
+# ==========================================================
+# IDE / エディタ
+# ==========================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==========================================================
+# ログ / 一時ファイル
+# ==========================================================
+*.log
+*.tmp
+*.bak
+tmp/
+.tmp/

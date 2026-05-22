@@ -1,0 +1,12 @@
+[package]
+name = "artia-platform-windows"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+artia-core = { path = "../artia-core" }
+thiserror.workspace = true
+log.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["winuser", "shellapi", "combaseapi", "objbase"] }

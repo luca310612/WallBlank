@@ -1,0 +1,14 @@
+[package]
+name = "artia-cli"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "artia-cli"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+thiserror.workspace = true
+log.workspace = true
+urlencoding = "2"

@@ -1,0 +1,20 @@
+[package]
+name = "artia-wgpu"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+wgpu.workspace = true
+bytemuck.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+log.workspace = true
+thiserror.workspace = true
+pollster = "0.4"
+half = "2"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "bmp", "webp"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "0.10"
+core-foundation-sys = "0.8"

@@ -1,0 +1,21 @@
+[package]
+name = "artia-ffi"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+artia-core = { path = "../artia-core" }
+artia-wgpu = { path = "../artia-wgpu" }
+artia-firebase = { path = "../artia-firebase" }
+artia-platform-macos = { path = "../artia-platform-macos" }
+log.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+env_logger = "0.11"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time"] }
+
+[build-dependencies]
+cbindgen = "0.28"
