@@ -69,7 +69,7 @@ class AuthManager: ObservableObject {
     private let profileCacheKey = "com.artia.auth.profileCache"
 
     /// 管理者メールアドレス（バックエンドでも判定するが、UI 即時反映用に保持）
-    private let adminEmail = "wallpaperhub8128@gmail.com"
+    private let adminEmail = "REDACTED@example.com"
 
     /// バックエンドクライアント
     private let client = CloudflareAuthClient()
