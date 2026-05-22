@@ -139,14 +139,14 @@ enum WebWallpaperSandbox {
       // WebSocket は完全にブロック（インスタンス化しようとしたら例外）
       try {
         window.WebSocket = function () {
-          throw new TypeError('WebSocket は Artia サンドボックスでブロックされています');
+          throw new TypeError('WebSocket は WallBlank サンドボックスでブロックされています');
         };
       } catch (_) {}
 
       // EventSource (Server-Sent Events) もブロック
       try {
         window.EventSource = function () {
-          throw new TypeError('EventSource は Artia サンドボックスでブロックされています');
+          throw new TypeError('EventSource は WallBlank サンドボックスでブロックされています');
         };
       } catch (_) {}
 
@@ -157,7 +157,7 @@ enum WebWallpaperSandbox {
           var url = typeof input === 'string' ? input : (input && input.url) || '';
           if (!isAllowedURL(url)) {
             return Promise.reject(new TypeError(
-              'Artia サンドボックス: 外部ネットワーク要求はブロックされています url=' + url
+              'WallBlank サンドボックス: 外部ネットワーク要求はブロックされています url=' + url
             ));
           }
           return origFetch(input, init);
@@ -170,7 +170,7 @@ enum WebWallpaperSandbox {
         XMLHttpRequest.prototype.open = function (method, url) {
           if (!isAllowedURL(url)) {
             throw new TypeError(
-              'Artia サンドボックス: XHR の外部ネットワーク要求はブロックされています url=' + url
+              'WallBlank サンドボックス: XHR の外部ネットワーク要求はブロックされています url=' + url
             );
           }
           return origOpen.apply(this, arguments);

@@ -967,7 +967,7 @@ extension DisplayWallpaperInstance {
 
     func loadWebWallpaper(from directoryURL: URL) {
         // 音楽プレイヤー型 Workshop 壁紙は難読化 JS が WKWebView で動かないため、
-        // Artia ネイティブの SwiftUI ビュー（MusicWallpaperView）で再生する。
+        // WallBlank ネイティブの SwiftUI ビュー（MusicWallpaperView）で再生する。
         if MusicWallpaperDetector.isMusicWallpaper(rootURL: directoryURL) {
             loadMusicWallpaper(from: directoryURL)
             return

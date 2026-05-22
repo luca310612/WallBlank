@@ -2,7 +2,7 @@ import Foundation
 import JavaScriptCore
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 5: SceneScriptRuntime のイベント発火 / 例外ハンドリング検証。
 final class SceneScriptRuntimeTests: XCTestCase {

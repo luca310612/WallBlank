@@ -35,7 +35,7 @@ enum SidebarTab: String, CaseIterable {
     }
 }
 
-/// メインのArtiaウィンドウ
+/// メインのWallBlankウィンドウ
 struct MainHubWindowContent: View {
     @ObservedObject var appDelegate: AppDelegate
     @ObservedObject var library: WallpaperLibrary
@@ -234,7 +234,7 @@ struct MainHubWindowContent: View {
                 .frame(width: 30, height: 30)
                 .background(Color.white.opacity(0.06), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-            Text("Artia")
+            Text("WallBlank")
                 .font(.system(size: 20, weight: .semibold))
 
             if authManager.isAdminMode {
@@ -1293,7 +1293,7 @@ struct HeaderPowerMenuButton: View {
             Button(role: .destructive) {
                 NSApplication.shared.terminate(nil)
             } label: {
-                Label("Artia を終了", systemImage: "power")
+                Label("WallBlank を終了", systemImage: "power")
             }
         } label: {
             Image(systemName: appLockManager.isLocked ? "lock.fill" : "power")

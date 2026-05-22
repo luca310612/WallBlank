@@ -39,9 +39,9 @@ class GalleryManager: ObservableObject {
 
     private var wallpaperDirectory: URL {
         guard let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
-            return fileManager.temporaryDirectory.appendingPathComponent("Artia/Wallpapers")
+            return fileManager.temporaryDirectory.appendingPathComponent("WallBlank/Wallpapers")
         }
-        return appSupport.appendingPathComponent("Artia/Wallpapers")
+        return appSupport.appendingPathComponent("WallBlank/Wallpapers")
     }
 
     /// Firestoreコレクション名

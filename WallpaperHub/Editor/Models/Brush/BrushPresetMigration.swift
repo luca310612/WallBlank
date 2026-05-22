@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - ブラシプリセットの v1 → v2 移行
 // Why: Phase 1.1 で導入した BrushPresetManager が単一 JSON
-//      (~/Library/Application Support/Artia/brush_presets.json) に保存していた
+//      (~/Library/Application Support/WallBlank/brush_presets.json) に保存していた
 //      ユーザー作成プリセットを、Phase 1.1+ の per-preset JSON ストレージへ
 //      1 度だけ移送する。済みフラグは UserDefaults に書く。
 
@@ -14,13 +14,13 @@ enum BrushPresetMigration {
     /// 単一 JSON のファイル名（BrushPresetManager 互換）
     private static let legacyFileName = "brush_presets.json"
 
-    /// 単一 JSON 配置先（Application Support/Artia）
+    /// 単一 JSON 配置先（Application Support/WallBlank）
     /// - Note: BrushPresetManager と同じパス解決ロジックに合わせる。
     static var legacyFileURL: URL {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? URL(fileURLWithPath: NSTemporaryDirectory())
         return appSupport
-            .appendingPathComponent("Artia", isDirectory: true)
+            .appendingPathComponent("WallBlank", isDirectory: true)
             .appendingPathComponent(legacyFileName)
     }
 

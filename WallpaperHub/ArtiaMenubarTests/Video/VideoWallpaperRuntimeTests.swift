@@ -4,7 +4,7 @@ import Foundation
 import Metal
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// VideoWallpaperRuntime の最小ロード/状態遷移テスト。
 /// - サンプル mp4 は AVAssetWriter で動的生成し、Resources バンドル依存を避ける

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// BrushPresetLibrary / BrushPresetMigration の単体テスト。
 /// - 同梱 4 プリセット読み込み

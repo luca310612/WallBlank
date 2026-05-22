@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 11H: 4 言語の `Localizable.strings` で `L10n.allKeys` がすべて翻訳済みかを検証する。
 final class LocalizationKeysTests: XCTestCase {
@@ -9,7 +9,7 @@ final class LocalizationKeysTests: XCTestCase {
     private static let supportedLocales: [String] = ["ja", "en", "zh-Hans", "ko"]
 
     /// .lproj の配置ディレクトリを探す。
-    /// - Note: テストバンドルからは Artia (本体) の Bundle.main を直接参照できないため、
+    /// - Note: テストバンドルからは WallBlank (本体) の Bundle.main を直接参照できないため、
     ///   リポジトリレイアウト相対 (`#filePath`) で `Resources/<lang>.lproj/Localizable.strings` を解決する。
     private static func stringsURL(for locale: String) -> URL {
         let here = URL(fileURLWithPath: #filePath)

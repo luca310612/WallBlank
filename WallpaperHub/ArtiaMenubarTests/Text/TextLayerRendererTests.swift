@@ -3,7 +3,7 @@ import CoreGraphics
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 4B: TextLayerRenderer の出力検証。
 ///
@@ -15,7 +15,7 @@ final class TextLayerRendererTests: XCTestCase {
 
     private var sampleDescriptor: TextLayerDescriptor {
         TextLayerDescriptor(
-            text: "Artia",
+            text: "WallBlank",
             fontName: nil, // システムフォント
             fontSize: 64,
             color: [1, 1, 1, 1],

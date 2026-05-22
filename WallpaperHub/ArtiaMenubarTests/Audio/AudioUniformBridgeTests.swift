@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 6A: AudioUniformBridge / EmitterAudioBinding の検証。
 /// Why: WgpuEngine の生成は環境依存 (Metal adapter) のため、可能な範囲は engine なしで検証し、

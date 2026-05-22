@@ -2,7 +2,7 @@ import Foundation
 import Metal
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 1.4+: Rust / Metal の BrushMaskRasterizing 出力が同等であることを担保する。
 /// - 円ストローク 3 種 (radius=5/50/200, hardness=0/0.5/1.0, opacity=1.0)

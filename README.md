@@ -1,6 +1,6 @@
 # WallBlank
 
-**Artia** という macOS 壁紙アプリ (SwiftUI + Metal + Rust) のソースコード公開版です。
+**WallBlank** という macOS 壁紙アプリ (SwiftUI + Metal + Rust) のソースコード公開版です。
 
 このリポジトリは **コードを読むためのスナップショット** であり、そのままビルド・実行することはできません。`.xcodeproj` / `.xcworkspace` / Assets / `Info.plist` / `GoogleService-Info.plist` などの設定・リソースファイルは含まれていません。本番のビルド可能なソースツリーは別途プライベートに管理されています。
 

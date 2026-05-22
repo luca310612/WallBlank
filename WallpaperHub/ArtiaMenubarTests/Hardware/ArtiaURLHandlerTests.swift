@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 8.5: artia:// URL のパース純粋関数テスト。
 final class ArtiaURLHandlerTests: XCTestCase {

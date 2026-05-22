@@ -7,9 +7,9 @@ enum AppConstants {
     // MARK: - App Identity
 
     /// 表示名（メニュー・ウィンドウタイトル等）
-    static let appDisplayName = "Artia"
+    static let appDisplayName = "WallBlank"
     /// キャッシュ・Application Support 等のディレクトリ名（統一用）
-    static let appFolderName = "Artia"
+    static let appFolderName = "WallBlank"
 
     // MARK: - Timer Intervals
 
@@ -147,14 +147,14 @@ enum AppConstants {
     ///      未対応説明 UI から飛ばすドキュメント URL とラベルをここに集約する。
     enum ApplicationWallpaper {
         /// `.app` ドロップ時に開く解説ページ。Wallpaper Engine 公式 macOS ガイドが存在しないため、
-        /// Artia 自前のドキュメントを案内する。
+        /// WallBlank 自前のドキュメントを案内する。
         static let documentationURL = URL(string: "https://artia.app/docs/application-wallpaper-macos")!
         /// 未対応説明 UI に表示する見出しの日本語文。
         static let unsupportedHeadline = "macOS 版では .app の壁紙化に対応していません"
         /// 未対応説明 UI に表示する詳細メッセージの日本語文。
         static let unsupportedMessage = """
         macOS は SIP / Mission Control の制約により、任意の .app を デスクトップウィンドウ層へ強制配置することができません。
-        Artia では「内製 .bundle プラグイン」のみを Application 壁紙としてホストできます。
+        WallBlank では「内製 .bundle プラグイン」のみを Application 壁紙としてホストできます。
         詳細は下記のドキュメントをご確認ください。
         """
     }
@@ -199,12 +199,12 @@ private let artiaWebWallpaperOSLog = OSLog(subsystem: "com.artia.app", category:
 /// 診断ログをファイルに追記するためのキュー（書き込みを直列化して行の混線を防ぐ）。
 private let artiaWebLogFileQueue = DispatchQueue(label: "com.artia.app.web-debug-log", qos: .utility)
 
-/// 診断ログの出力先ファイル URL（`~/Library/Logs/Artia/web-debug.log`）。
+/// 診断ログの出力先ファイル URL（`~/Library/Logs/WallBlank/web-debug.log`）。
 private let artiaWebLogFileURL: URL = {
     let fm = FileManager.default
     let logsDir = fm.urls(for: .libraryDirectory, in: .userDomainMask).first?
         .appendingPathComponent("Logs")
-        .appendingPathComponent("Artia") ?? URL(fileURLWithPath: "/tmp")
+        .appendingPathComponent("WallBlank") ?? URL(fileURLWithPath: "/tmp")
     try? fm.createDirectory(at: logsDir, withIntermediateDirectories: true)
     return logsDir.appendingPathComponent("web-debug.log")
 }()
@@ -218,7 +218,7 @@ private let artiaWebLogTimestampFormatter: ISO8601DateFormatter = {
 /// Web 壁紙・ローカル HTTP の診断用（DEBUG/Release 関係なく Unified Logging とログファイルに出る）
 func artiaWebLog(_ message: String) {
     os_log("%{public}@", log: artiaWebWallpaperOSLog, type: .info, message)
-    fputs("[Artia:WebWallpaper] \(message)\n", stderr)
+    fputs("[WallBlank:WebWallpaper] \(message)\n", stderr)
 
     let line = "\(artiaWebLogTimestampFormatter.string(from: Date())) \(message)\n"
     artiaWebLogFileQueue.async {

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 7B: PlaylistManager の CRUD / 再生モード / Codable 検証。
 @MainActor

@@ -66,7 +66,7 @@ extension DisplayWallpaperInstance {
             let frontAppBundleID = frontApp?.bundleIdentifier
             let frontAppPID = frontApp?.processIdentifier
 
-            // Artia自身がフロントの場合は停止しない
+            // WallBlank自身がフロントの場合は停止しない
             let isArtiaFront = frontAppBundleID == Bundle.main.bundleIdentifier
 
             // Finderがフロントの場合は停止しない
@@ -132,7 +132,7 @@ extension DisplayWallpaperInstance {
                 }
 
                 // システムアプリは無視
-                if ownerName == "Artia" || ownerName == "Dock" || ownerName == "Finder" {
+                if ownerName == "WallBlank" || ownerName == "Dock" || ownerName == "Finder" {
                     continue
                 }
 

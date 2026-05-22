@@ -1,4 +1,4 @@
-// Artia Firebase REST API クライアント。
+// WallBlank Firebase REST API クライアント。
 // Why: Firebase SDK を使わずに Auth (Identity Toolkit / Secure Token API)、
 //      Storage (firebasestorage.googleapis.com)、Firestore、Cloud Messaging の
 //      REST エンドポイントを Rust から直接叩く。

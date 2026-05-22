@@ -70,7 +70,7 @@ enum WallpaperEngineWebUserProperties {
               done = true;
               window.__artiaWEPropsBridgeDone = true;
             } catch (e) {
-              try { console.error('Artia WE bridge', e); } catch (_) {}
+              try { console.error('WallBlank WE bridge', e); } catch (_) {}
             }
           }
           function poll(step) {

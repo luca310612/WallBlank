@@ -321,7 +321,7 @@ final class LocalHTTPFileServer {
             contentRange = nil
         }
 
-        let extra = ["X-Artia-Placeholder: 1"]
+        let extra = ["X-WallBlank-Placeholder: 1"]
         let headLines = responseLines(
             status: status,
             reason: httpReason(for: status),

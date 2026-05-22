@@ -1,6 +1,6 @@
 import Foundation
 import Combine
-@testable import Artia
+@testable import WallBlank
 
 /// EventBusProtocol の Mock 実装（spy 機能付き）。
 /// Why: テスト時に publish された WallpaperEvent を直接検証するため、Combine 経由ではなく配列に記録する。

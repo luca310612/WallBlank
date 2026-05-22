@@ -49,7 +49,7 @@ final class AppLockManager: ObservableObject {
 
         Task { [weak self] in
             guard let self else { return }
-            let result = await self.requestAuthentication(reason: "Artiaを開くには認証してください。")
+            let result = await self.requestAuthentication(reason: "WallBlankを開くには認証してください。")
 
             await MainActor.run {
                 self.isAuthenticating = false
@@ -191,7 +191,7 @@ struct LockScreenWindowContent: View {
                     }
 
                     VStack(spacing: 6) {
-                        Text("Artia はロックされています")
+                        Text("WallBlank はロックされています")
                             .font(.system(size: 24, weight: .semibold))
                             .foregroundStyle(.white)
 
@@ -270,7 +270,7 @@ struct AppLockContainer<Content: View>: View {
                         .font(.system(size: 28, weight: .semibold))
                         .foregroundStyle(.white)
 
-                    Text("Artia はロックされています")
+                    Text("WallBlank はロックされています")
                         .font(.system(size: 18, weight: .semibold))
 
                     Text("Touch ID または Mac のパスワードで解除できます。")
@@ -344,7 +344,7 @@ struct ArtiaApp: App {
 
     var body: some Scene {
         // メインウィンドウ
-        Window("Artia", id: "main") {
+        Window("WallBlank", id: "main") {
             AppLockContainer(appLockManager: appLockManager) {
                 MainWindowView(appDelegate: appDelegate)
                     .onOpenURL { url in
@@ -365,7 +365,7 @@ struct ArtiaApp: App {
         .windowResizability(.contentSize)
 
         // エディターウィンドウ（別ウィンドウ）
-        Window("Artia エディター", id: "editor") {
+        Window("WallBlank エディター", id: "editor") {
             AppLockContainer(appLockManager: appLockManager) {
                 ImageEditorView()
             }
@@ -433,7 +433,7 @@ struct MainWindowView: View {
         .background(
             MainWindowAccessor { window in
                 window.identifier = NSUserInterfaceItemIdentifier("main")
-                window.title = "Artia"
+                window.title = "WallBlank"
                 window.tabbingMode = .disallowed
                 window.titlebarAppearsTransparent = true
                 window.titleVisibility = .hidden
@@ -555,7 +555,7 @@ struct MenuContentView: View {
 
         Divider()
 
-        Button("Artia を終了") {
+        Button("WallBlank を終了") {
             NSApplication.shared.terminate(nil)
         }
     }
@@ -564,7 +564,7 @@ struct MenuContentView: View {
 /// ウィンドウ操作のユーティリティ
 enum WindowHelper {
     private static func isMainWindow(_ window: NSWindow) -> Bool {
-        window.identifier?.rawValue == "main" || window.title == "Artia"
+        window.identifier?.rawValue == "main" || window.title == "WallBlank"
     }
 
     private static func allMainWindows() -> [NSWindow] {
@@ -589,7 +589,7 @@ enum WindowHelper {
         guard let primaryWindow = preferredWindow ?? windows.first else { return nil }
 
         primaryWindow.identifier = NSUserInterfaceItemIdentifier("main")
-        primaryWindow.title = "Artia"
+        primaryWindow.title = "WallBlank"
         primaryWindow.tabbingMode = .disallowed
 
         for window in windows where window !== primaryWindow {
@@ -606,7 +606,7 @@ enum WindowHelper {
 
     private static func configureMainWindowForForeground(_ window: NSWindow) {
         window.identifier = NSUserInterfaceItemIdentifier("main")
-        window.title = "Artia"
+        window.title = "WallBlank"
         window.tabbingMode = .disallowed
         if window.collectionBehavior.contains(.fullScreenAllowsTiling) {
             window.collectionBehavior.remove(.fullScreenAllowsTiling)

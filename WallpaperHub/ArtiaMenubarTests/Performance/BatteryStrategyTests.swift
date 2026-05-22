@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 7A: BatteryStrategy の Codable / 適用ロジック検証。
 final class BatteryStrategyTests: XCTestCase {

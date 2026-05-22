@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 4C: PuppetWarpBridge の Codable / FFI ラウンドトリップ検証。
 final class PuppetWarpBridgeTests: XCTestCase {

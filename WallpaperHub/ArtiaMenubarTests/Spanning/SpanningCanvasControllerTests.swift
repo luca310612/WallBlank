@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 7B: SpanningCanvasController の payload 計算 / JSON 変換検証。
 @MainActor

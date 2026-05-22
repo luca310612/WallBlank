@@ -27,7 +27,7 @@ impl Cache {
         Ok(Self { root })
     }
 
-    /// 既定ルート (`~/Library/Caches/Artia/firebase/`) に構築する。
+    /// 既定ルート (`~/Library/Caches/WallBlank/firebase/`) に構築する。
     /// Why: macOS の標準キャッシュディレクトリを使うことで、OS の自動掃除に任せられる。
     pub fn default_for_artia() -> Result<Self> {
         let root = Self::default_root()?;
@@ -38,7 +38,7 @@ impl Cache {
     pub fn default_root() -> Result<PathBuf> {
         let base = dirs::cache_dir()
             .ok_or_else(|| FirebaseError::Internal("cache_dir が解決できません".to_string()))?;
-        Ok(base.join("Artia").join("firebase"))
+        Ok(base.join("WallBlank").join("firebase"))
     }
 
     /// ルートパスを参照する (主にテスト用)。

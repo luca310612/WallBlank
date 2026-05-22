@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 6B: EffectChainDSL パーサの検証。
 final class EffectChainDSLTests: XCTestCase {

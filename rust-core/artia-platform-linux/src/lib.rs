@@ -1,4 +1,4 @@
-// Artia Linux プラットフォーム固有の実装
+// WallBlank Linux プラットフォーム固有の実装
 // GNOME (gsettings), KDE (plasma-apply-wallpaperimage), その他DE対応
 
 use artia_core::platform::{PlatformError, WallpaperFitMode, WallpaperProvider};

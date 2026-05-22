@@ -1,4 +1,4 @@
-// Artia WGPUアニメーションエンジン
+// WallBlank WGPUアニメーションエンジン
 // 静的画像にアニメーションを付与するヘッドレスGPUレンダラー
 
 mod engine;

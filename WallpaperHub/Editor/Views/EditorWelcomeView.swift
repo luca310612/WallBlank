@@ -51,7 +51,7 @@ struct EditorWelcomeView: View {
                     Image(systemName: "paintbrush.pointed.fill")
                         .font(.system(size: 56))
                         .foregroundStyle(.white.opacity(0.92))
-                    Text("Artia")
+                    Text("WallBlank")
                         .font(.system(size: 32, weight: .semibold, design: .rounded))
                         .foregroundStyle(.white)
                     Text("エディター")
@@ -224,7 +224,7 @@ struct EditorWelcomeView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             let alert = NSAlert()
             alert.messageText = "ローカルフォルダへのアクセス"
-            alert.informativeText = "Artia は「書類」やデスクトップなどから `.artia` プロジェクトを検索します。次のダイアログで「書類」フォルダ（またはよく使う場所）を選択すると、macOS のプライバシー設定に利用が記録され、一覧表示が安定します。"
+            alert.informativeText = "WallBlank は「書類」やデスクトップなどから `.artia` プロジェクトを検索します。次のダイアログで「書類」フォルダ（またはよく使う場所）を選択すると、macOS のプライバシー設定に利用が記録され、一覧表示が安定します。"
             alert.alertStyle = .informational
             alert.addButton(withTitle: "フォルダを選択")
             alert.addButton(withTitle: "あとで")
@@ -285,7 +285,7 @@ enum ArtiaProjectDiscovery {
         var scanRoots: [ScopedRoot] = [
             ScopedRoot(url: home.appendingPathComponent("Documents", isDirectory: true), stopAccessing: false),
             ScopedRoot(url: home.appendingPathComponent("Desktop", isDirectory: true), stopAccessing: false),
-            ScopedRoot(url: home.appendingPathComponent("Artia", isDirectory: true), stopAccessing: false),
+            ScopedRoot(url: home.appendingPathComponent("WallBlank", isDirectory: true), stopAccessing: false),
             ScopedRoot(url: home.appendingPathComponent("Memory", isDirectory: true), stopAccessing: false)
         ]
         if let extra = resolvedUserSelectedScanRoot() {

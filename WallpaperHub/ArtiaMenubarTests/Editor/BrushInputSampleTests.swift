@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 1.3+: BrushInputSample の正規化挙動を最低限担保する。
 /// - 圧力／傾き／速度の既定値が仕様通り (1.0 / 0 / .zero)

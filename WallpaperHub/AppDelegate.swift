@@ -85,7 +85,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // ユニットテスト実行中は AppKit/Metal/Rust の重い初期化を一切行わない。
-        // Why: TEST_HOST=Artia.app で ArtiaMenubarTests を起動するため、tests 用に最小起動状態を維持する。
+        // Why: TEST_HOST=WallBlank.app で ArtiaMenubarTests を起動するため、tests 用に最小起動状態を維持する。
         if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil {
             return
         }
@@ -108,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             appMode = .combined
         }
 
-        debugLog("[Artia] \(appMode)モードで起動中...")
+        debugLog("[WallBlank] \(appMode)モードで起動中...")
 
         switch appMode {
         case .engine:
@@ -161,7 +161,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             MacOSDesktopClickRevealAdvice.scheduleLocalReminderIfAppropriate(appMode: self.appMode)
         }
 
-        debugLog("[Artia] 起動完了")
+        debugLog("[WallBlank] 起動完了")
     }
 
     /// ウィンドウを閉じてもアプリを終了しない
@@ -175,7 +175,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             // WindowGroupのウィンドウを探す
             var foundWindow = false
             for window in NSApp.windows {
-                if window.identifier?.rawValue == "main" || window.title == "Artia" {
+                if window.identifier?.rawValue == "main" || window.title == "WallBlank" {
                     window.tabbingMode = .disallowed
                     window.makeKeyAndOrderFront(nil)
                     NSApp.activate(ignoringOtherApps: true)
@@ -192,7 +192,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         } else {
             // 既にウィンドウが表示されている場合、それを前面に持ってくる
             for window in NSApp.windows {
-                if window.identifier?.rawValue == "main" || window.title == "Artia" {
+                if window.identifier?.rawValue == "main" || window.title == "WallBlank" {
                     window.tabbingMode = .disallowed
                     window.makeKeyAndOrderFront(nil)
                     NSApp.activate(ignoringOtherApps: true)
@@ -487,7 +487,7 @@ extension AppDelegate {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            debugLog("[Artia] システム復帰検出")
+            debugLog("[WallBlank] システム復帰検出")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
                 self?.handleResume(reason: "システム復帰")
             }
@@ -508,7 +508,7 @@ extension AppDelegate {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            debugLog("[Artia] ディスプレイ復帰検出")
+            debugLog("[WallBlank] ディスプレイ復帰検出")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
                 self?.handleResume(reason: "ディスプレイ復帰")
             }
@@ -529,13 +529,13 @@ extension AppDelegate {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            debugLog("[Artia] セッション復帰検出")
+            debugLog("[WallBlank] セッション復帰検出")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.handleResume(reason: "セッション復帰")
             }
         }
 
-        debugLog("[Artia] スリープ/ロック/復帰監視を開始")
+        debugLog("[WallBlank] スリープ/ロック/復帰監視を開始")
     }
 
     private func removeSleepWakeObservers() {
@@ -556,7 +556,7 @@ extension AppDelegate {
 
     /// スリープ/ロック/ディスプレイOFF時の共通一時停止処理
     private func handleSuspend(reason: String) {
-        debugLog("[Artia] \(reason)検出 → 全レンダリングを一時停止")
+        debugLog("[WallBlank] \(reason)検出 → 全レンダリングを一時停止")
 
         wallpaperEngine?.suspendForSystemEvent(reason: reason)
 
@@ -576,7 +576,7 @@ extension AppDelegate {
 
     /// 復帰/ロック解除/ディスプレイON時の共通復旧処理
     private func handleResume(reason: String) {
-        debugLog("[Artia] \(reason) → 復旧処理を開始")
+        debugLog("[WallBlank] \(reason) → 復旧処理を開始")
 
         wallpaperEngine?.resumeFromSystemEvent(reason: reason)
 
@@ -599,7 +599,7 @@ extension AppDelegate {
             RustCore.wgpuSetPlaying(engine, playing: true)
         }
 
-        debugLog("[Artia] \(reason) → 復旧処理完了")
+        debugLog("[WallBlank] \(reason) → 復旧処理完了")
     }
 
     private func syncEffectConfigurationToRenderers() {
@@ -785,13 +785,13 @@ extension AppDelegate {
         wallpaperSelectionEpoch == epoch
     }
 
-    /// Application Support 内の Artia/Wallpapers 配下かどうか
+    /// Application Support 内の WallBlank/Wallpapers 配下かどうか
     private func isUnderArtiaWallpapersDirectory(_ url: URL) -> Bool {
         guard let appSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
             return false
         }
         let root = appSupportURL
-            .appendingPathComponent("Artia")
+            .appendingPathComponent("WallBlank")
             .appendingPathComponent("Wallpapers")
             .standardizedFileURL
             .path
@@ -814,7 +814,7 @@ extension AppDelegate {
             return nil
         }
         let wallpapersDir = appSupportURL
-            .appendingPathComponent("Artia")
+            .appendingPathComponent("WallBlank")
             .appendingPathComponent("Wallpapers")
 
         do {
@@ -1403,7 +1403,7 @@ extension AppDelegate {
             defer: false
         )
 
-        window.title = "Artia"
+        window.title = "WallBlank"
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .visible
         window.isMovableByWindowBackground = true

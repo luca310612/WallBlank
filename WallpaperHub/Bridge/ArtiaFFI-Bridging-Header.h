@@ -1,6 +1,6 @@
 //
 //  ArtiaFFI-Bridging-Header.h
-//  Artia
+//  WallBlank
 //
 //  Rust FFI ブリッジヘッダー
 //  cbindgen が自動生成した artia_ffi.h をインクルードする

@@ -1,5 +1,5 @@
 import Foundation
-@testable import Artia
+@testable import WallBlank
 
 /// SettingsRepositoryProtocol の Dictionary バックエンド実装。
 /// Why: テストごとにクリーンな永続層を使うため、UserDefaults を介さないインメモリ実装を提供する。

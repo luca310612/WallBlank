@@ -3,7 +3,7 @@ import SwiftUI
 struct ArtiaMenubarContentView: View {
     var body: some View {
         VStack(spacing: 12) {
-            Text("Artia Menubar")
+            Text("WallBlank Menubar")
                 .font(.headline)
             Text("This is a minimal host app for tests.")
                 .font(.caption)

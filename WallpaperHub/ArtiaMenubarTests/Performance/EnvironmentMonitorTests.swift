@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 7A: EnvironmentMonitor の per-display pause 計算と snapshot 結合検証。
 @MainActor

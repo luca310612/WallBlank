@@ -3,7 +3,7 @@ import Metal
 import MetalKit
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 1.2+ シェーダ回帰テスト。
 /// - Composite.metal の `kShaderType` Function Constant 化により 4 種の PSO バリアントが

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 4C: SkeletonBridge の Codable / FFI ラウンドトリップ + AnimationManager+Bone 拡張の検証。
 final class SkeletonBridgeTests: XCTestCase {

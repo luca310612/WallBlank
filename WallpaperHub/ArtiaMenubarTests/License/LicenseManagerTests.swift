@@ -2,7 +2,7 @@ import XCTest
 import Foundation
 import Security
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 11H: LicenseManager の体験版 / 不正キー / 正規キー検証。
 @MainActor

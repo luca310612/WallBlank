@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 9B: WidgetDataProvider の round-trip と Codable 検証。
 final class WidgetDataProviderTests: XCTestCase {

@@ -1,5 +1,5 @@
 import XCTest
-@testable import Artia
+@testable import WallBlank
 
 /// InMemorySettingsRepository の get/set/delete を確認する基盤テスト。
 /// Why: 永続層モックの動作検証は、設定系テスト全体の前提となる。

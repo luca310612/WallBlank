@@ -584,7 +584,7 @@ private struct WallpaperPreviewBackdrop: View {
                 if let webWallpaperRootURL,
                    let musicView = MusicWallpaperView(rootURL: webWallpaperRootURL) {
                     // 音楽プレイヤー型 Workshop 壁紙は、難読化 JS が WKWebView 上で動かないため
-                    // Artia ネイティブの SwiftUI プレイヤーで描画する。
+                    // WallBlank ネイティブの SwiftUI プレイヤーで描画する。
                     musicView
                         .frame(width: proxy.size.width, height: proxy.size.height)
                         .onAppear { onWebPreviewLoadFinished() }

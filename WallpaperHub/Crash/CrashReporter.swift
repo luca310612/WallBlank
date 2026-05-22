@@ -5,7 +5,7 @@ import Darwin
 ///
 /// 仕組み:
 ///   1. `install()` で NSSetUncaughtExceptionHandler + signal handler を登録
-///   2. クラッシュ時にスタックトレースを `~/Library/Logs/Artia/crash-<timestamp>.log` に書き出し
+///   2. クラッシュ時にスタックトレースを `~/Library/Logs/WallBlank/crash-<timestamp>.log` に書き出し
 ///   3. 起動時に `flushPending()` で未送信の crash log を Firestore "crash_reports" にアップロード
 ///   4. 個人情報 (ユーザ名を含むファイルパス) は `~/` に置換してから保存
 ///   5. Settings の Toggle (`SharedSettingsKeys.crashReportingEnabled`) で全体を ON/OFF 制御
@@ -28,8 +28,8 @@ final class CrashReporter {
             .urls(for: .libraryDirectory, in: .userDomainMask)
             .first?
             .appendingPathComponent("Logs", isDirectory: true)
-            .appendingPathComponent("Artia", isDirectory: true)
-            ?? FileManager.default.temporaryDirectory.appendingPathComponent("Artia/Logs")
+            .appendingPathComponent("WallBlank", isDirectory: true)
+            ?? FileManager.default.temporaryDirectory.appendingPathComponent("WallBlank/Logs")
         return logs
     }
 

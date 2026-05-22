@@ -1,4 +1,4 @@
-// Artia コアロジッククレート
+// WallBlank コアロジッククレート
 // プラットフォーム非依存のビジネスロジックを提供する
 
 pub mod models;
@@ -10,7 +10,7 @@ pub mod brush_mask;
 pub mod mask_paint;
 pub mod magnetic_select;
 
-/// Artiaのバージョン情報を返す
+/// WallBlankのバージョン情報を返す
 pub fn version() -> &'static str {
     env!("CARGO_PKG_VERSION")
 }

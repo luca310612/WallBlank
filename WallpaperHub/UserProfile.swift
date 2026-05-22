@@ -173,11 +173,11 @@ struct UserProfile: Codable, Equatable {
     /// アバター画像の保存ディレクトリ
     static var avatarDirectory: URL {
         guard let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
-            let fallback = FileManager.default.temporaryDirectory.appendingPathComponent("Artia/Avatars", isDirectory: true)
+            let fallback = FileManager.default.temporaryDirectory.appendingPathComponent("WallBlank/Avatars", isDirectory: true)
             try? FileManager.default.createDirectory(at: fallback, withIntermediateDirectories: true)
             return fallback
         }
-        let dir = appSupport.appendingPathComponent("Artia/Avatars", isDirectory: true)
+        let dir = appSupport.appendingPathComponent("WallBlank/Avatars", isDirectory: true)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir
     }

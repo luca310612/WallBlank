@@ -1,7 +1,7 @@
 import Cocoa
 import ScreenSaver
 
-/// Phase 9A: Artia スクリーンセーバー本体。
+/// Phase 9A: WallBlank スクリーンセーバー本体。
 ///
 /// 目標 (本フェーズの最低ライン):
 /// - .saver バンドルとして System Settings → Screen Saver に登録できる
@@ -90,7 +90,7 @@ public final class ArtiaScreenSaverView: ScreenSaverView {
         }
 
         // タイトル
-        let title = "Artia"
+        let title = "WallBlank"
         let attrs: [NSAttributedString.Key: Any] = [
             .foregroundColor: NSColor.white.withAlphaComponent(0.85),
             .font: NSFont.systemFont(ofSize: max(bounds.height * 0.05, 18), weight: .light)

@@ -2,7 +2,7 @@ import AppKit
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 4B: ParallaxNormalizer / ParallaxController のロジック検証。
 ///

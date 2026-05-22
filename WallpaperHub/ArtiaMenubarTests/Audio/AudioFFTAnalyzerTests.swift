@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 6A: AudioFFTAnalyzer の決定論的検証。
 /// Why: マイク経路は実機依存だが、PCM 入力 → バンド出力の経路は計算式で保証できるためテストを書く。

@@ -6,7 +6,7 @@ import AVKit
 // MARK: - Manifest モデル
 
 /// Workshop の音楽プレイヤー型 Web 壁紙の 1 トラック。
-/// HTML/JS とは独立に Artia 側でネイティブ再生するため、`data.json` を直接モデル化する。
+/// HTML/JS とは独立に WallBlank 側でネイティブ再生するため、`data.json` を直接モデル化する。
 struct MusicTrack: Identifiable, Hashable {
     let id: UUID
     /// 表示用の代表タイトル（ja → ko → fallback の順で解決済み）
@@ -170,7 +170,7 @@ enum SubtitleParser {
 /// 5. **追加条件**: project.json に `template == "music-player"` が指定されているか、
 ///    あるいは workshopid が `musicPlayerWorkshopAllowlist` に含まれていること。
 ///    （JS 任意実行リスクを抑えるため、デフォルトでは music-player UI を全 Web 壁紙に
-///     適用しない。明示的にテンプレ指定された壁紙のみ Artia 製ネイティブ UI で描画する）
+///     適用しない。明示的にテンプレ指定された壁紙のみ WallBlank 製ネイティブ UI で描画する）
 enum MusicWallpaperDetector {
 
     /// `project.json` に `template` フィールドが無い既存壁紙のうち、

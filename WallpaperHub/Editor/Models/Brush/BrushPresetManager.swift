@@ -4,7 +4,7 @@ import Combine
 // MARK: - ブラシプリセットマネージャ (Phase 1.1)
 // Why: ロードマップ Phase 1.1 で要求された「単一 JSON ファイルでのブラシプリセット永続化」を、
 // 既存の BrushPresetLibrary(App Group + ファイル分散保存) と並列に提供する。
-// - 保存先は ~/Library/Application Support/Artia/brush_presets.json に統一
+// - 保存先は ~/Library/Application Support/WallBlank/brush_presets.json に統一
 // - 既存の per-file 永続化(BrushPresetLibrary) を破壊せずに「後付け」で導入し、
 //   初回起動時のみ既存 per-file プリセットを単一ファイルへ自動マイグレートする。
 
@@ -16,7 +16,7 @@ final class BrushPresetManager: ObservableObject {
     /// 表示順にソート済みのプリセット一覧
     @Published private(set) var presets: [BrushPreset] = []
 
-    /// 永続化先ファイル (~/Library/Application Support/Artia/brush_presets.json)
+    /// 永続化先ファイル (~/Library/Application Support/WallBlank/brush_presets.json)
     private let storageURL: URL
 
     /// 既存 BrushPresetLibrary の per-file 保存ディレクトリ (App Group が無い場合のみ存在)
@@ -25,7 +25,7 @@ final class BrushPresetManager: ObservableObject {
     private init() {
         let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? URL(fileURLWithPath: NSTemporaryDirectory())
-        let artiaDir = appSupport.appendingPathComponent("Artia", isDirectory: true)
+        let artiaDir = appSupport.appendingPathComponent("WallBlank", isDirectory: true)
         storageURL = artiaDir.appendingPathComponent("brush_presets.json")
         legacyStorageDirectory = artiaDir.appendingPathComponent("BrushPresets", isDirectory: true)
 

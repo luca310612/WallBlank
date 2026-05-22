@@ -508,7 +508,7 @@ private extension Int {
 }
 
 extension UTType {
-    /// Artia エディター用ドキュメントパッケージ（ディレクトリ `.artia` + project.json + assets）
+    /// WallBlank エディター用ドキュメントパッケージ（ディレクトリ `.artia` + project.json + assets）
     static var artiaWallpaperProject: UTType {
         UTType(exportedAs: "com.artia.artia-package")
     }

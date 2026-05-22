@@ -1,6 +1,6 @@
 //! Phase 8.4: artia-cli
 //!
-//! Artia 壁紙アプリを CLI から制御するためのフロントエンド。
+//! WallBlank 壁紙アプリを CLI から制御するためのフロントエンド。
 //! 内部では artia:// URL Scheme を組み立て、macOS では `open -g 'artia://...'` を呼ぶ。
 //! アプリが未起動の場合は macOS が自動起動する。
 //!
@@ -19,7 +19,7 @@ use url_builder::{build_url, CliCommand};
 
 #[derive(Parser, Debug)]
 #[command(name = "artia-cli")]
-#[command(about = "Artia 壁紙エンジンの CLI コントローラ", long_about = None)]
+#[command(about = "WallBlank 壁紙エンジンの CLI コントローラ", long_about = None)]
 #[command(version)]
 struct Cli {
     /// URL を実行せず標準出力に出すだけにする (CI/デバッグ用)

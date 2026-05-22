@@ -1,4 +1,4 @@
-// Artia Firebase REST クライアントの共通エラー型。
+// WallBlank Firebase REST クライアントの共通エラー型。
 // Why: reqwest / serde_json / 認証エラーなど性質の違うエラーを単一の `FirebaseError` に集約し、
 //      呼び出し側がパターンマッチで扱えるようにするため。
 

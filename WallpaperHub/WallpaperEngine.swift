@@ -1,7 +1,7 @@
 import Cocoa
 import MetalKit
 
-/// Artia - 複数ディスプレイ対応
+/// WallBlank - 複数ディスプレイ対応
 class WallpaperEngine {
     private struct InitialWallpaperAssignment {
         let displayID: String

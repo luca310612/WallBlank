@@ -1,5 +1,5 @@
 import Foundation
-@testable import Artia
+@testable import WallBlank
 
 /// SettingsManagerProtocol の Mock 実装。
 /// Why: テスト時に WallpaperEngine などへ注入し、書き込み履歴を spy として検証できるようにする。

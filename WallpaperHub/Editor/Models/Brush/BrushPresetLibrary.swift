@@ -24,7 +24,7 @@ final class BrushPresetLibrary: ObservableObject {
     private static let appGroup = "group.com.artia.shared"
     private static let activeIDKey = "artia.brushPresets.activeID.v1"
 
-    /// 永続化先ディレクトリ（App Group が無い場合は ~/Library/Application Support/Artia/BrushPresets）
+    /// 永続化先ディレクトリ（App Group が無い場合は ~/Library/Application Support/WallBlank/BrushPresets）
     private let storageDirectory: URL
 
     private convenience init() {
@@ -44,7 +44,7 @@ final class BrushPresetLibrary: ObservableObject {
             let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
                 ?? URL(fileURLWithPath: NSTemporaryDirectory())
             storageDirectory = appSupport
-                .appendingPathComponent("Artia", isDirectory: true)
+                .appendingPathComponent("WallBlank", isDirectory: true)
                 .appendingPathComponent("BrushPresets", isDirectory: true)
         }
 

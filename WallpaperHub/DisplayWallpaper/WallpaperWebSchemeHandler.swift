@@ -154,7 +154,7 @@ final class WallpaperWebSchemeHandler: NSObject, WKURLSchemeHandler {
             contentLength: responseData.count,
             contentRange: requestedRange.map { _ in "bytes \(byteStart)-\(byteEnd)/\(fileLength)" },
             acceptRanges: true,
-            extraHeaders: ["X-Artia-Placeholder": "1"],
+            extraHeaders: ["X-WallBlank-Placeholder": "1"],
             cacheControl: Self.cacheControlStaticAsset
         )
         let statusCode = requestedRange == nil ? 200 : 206

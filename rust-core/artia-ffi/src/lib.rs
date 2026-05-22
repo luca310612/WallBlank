@@ -1,4 +1,4 @@
-// Artia FFI エクスポート層
+// WallBlank FFI エクスポート層
 // Swift側から呼び出されるC互換関数を定義する
 
 use std::ffi::{c_char, CStr, CString};
@@ -81,7 +81,7 @@ pub extern "C" fn artia_free_bytes(ptr: *mut u8, len: u32) {
     }
 }
 
-/// Artiaのバージョン文字列を返す
+/// WallBlankのバージョン文字列を返す
 /// 戻り値は artia_free_string() で解放すること
 #[unsafe(no_mangle)]
 pub extern "C" fn artia_version() -> *mut c_char {
@@ -96,7 +96,7 @@ pub extern "C" fn artia_version() -> *mut c_char {
 #[unsafe(no_mangle)]
 pub extern "C" fn artia_init() {
     let _ = env_logger::try_init();
-    log::info!("Artia Rustコア初期化完了 (v{})", artia_core::version());
+    log::info!("WallBlank Rustコア初期化完了 (v{})", artia_core::version());
 }
 
 // =============================================================================
@@ -139,7 +139,7 @@ pub extern "C" fn artia_pkg_extract(
     }
 }
 
-/// Artia 独自フォーマット (.wallpaper) を書き出す。
+/// WallBlank 独自フォーマット (.wallpaper) を書き出す。
 /// `descriptor_json` は以下の JSON:
 /// ```json
 /// {

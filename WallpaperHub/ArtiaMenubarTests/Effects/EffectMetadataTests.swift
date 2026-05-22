@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 6B: effect.json スキーマと Codable ラウンドトリップの検証。
 final class EffectMetadataTests: XCTestCase {

@@ -1,6 +1,6 @@
 import XCTest
 import Combine
-@testable import Artia
+@testable import WallBlank
 
 /// MockEventBus に対する subscribe/publish の確認。
 /// Why: テスト時にイベントバスの spy が機能することを保証し、今後のイベント検証テストの土台にする。

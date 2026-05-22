@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 7B: ApplicationRulesManager の発火 / 再発火抑制 / Codable 検証。
 @MainActor
@@ -23,7 +23,7 @@ final class ApplicationRulesManagerTests: XCTestCase {
     private func clearPersistenceFile() {
         let fm = FileManager.default
         if let appSupport = fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first {
-            let url = appSupport.appendingPathComponent("Artia/application_rules.json")
+            let url = appSupport.appendingPathComponent("WallBlank/application_rules.json")
             try? fm.removeItem(at: url)
         }
     }

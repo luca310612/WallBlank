@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 6B: EffectRegistry の bootstrap / lookup / chain 検証。
 @MainActor
@@ -19,7 +19,7 @@ final class EffectRegistryTests: XCTestCase {
         }
         if totalLoaded < 17 {
             // テストバンドル単体に effect.json が残っている可能性も確認。
-            for bundle in Bundle.allBundles where bundle.bundlePath.contains("Artia") {
+            for bundle in Bundle.allBundles where bundle.bundlePath.contains("WallBlank") {
                 if case let .success(count) = registry.bootstrap(bundle: bundle) {
                     totalLoaded = max(totalLoaded, count)
                 }

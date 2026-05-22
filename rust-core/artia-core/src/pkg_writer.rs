@@ -1,13 +1,13 @@
-// Phase 10D: Artia 公開用 .wallpaper パッケージ書き出し
+// Phase 10D: WallBlank 公開用 .wallpaper パッケージ書き出し
 //
 // PkgReader / Wallpaper Engine の .pkg は独自バイナリ TOC 形式だが、
-// Artia 独自フォーマット (.wallpaper) は ZIP コンテナとして以下を持つ:
-//   - project.json   (Artia のプロジェクト情報: title / description / type など)
+// WallBlank 独自フォーマット (.wallpaper) は ZIP コンテナとして以下を持つ:
+//   - project.json   (WallBlank のプロジェクト情報: title / description / type など)
 //   - scene.json     (シーンツリー / レイヤー定義)
 //   - assets/<name>  (画像 / 動画 / Web 等のバイナリ)
-//   - manifest.json  (Artia フォーマットバージョン情報)
+//   - manifest.json  (WallBlank フォーマットバージョン情報)
 //
-// Why: .pkg と完全な互換性は難しいので、まずは Artia 独自形式として安定させる。
+// Why: .pkg と完全な互換性は難しいので、まずは WallBlank 独自形式として安定させる。
 //      manifest.json に version を持たせて将来の互換ロジックを差し込める余地を残す。
 
 use std::fs::File;
@@ -36,7 +36,7 @@ pub enum PkgWriteError {
 /// Why: 将来仕様が変わった際に PkgReader 側で互換ロジックを分岐させるため。
 pub const ARTIA_PKG_VERSION: u32 = 1;
 
-/// Artia 独自フォーマット (.wallpaper) のマジック識別子。
+/// WallBlank 独自フォーマット (.wallpaper) のマジック識別子。
 pub const ARTIA_PKG_MAGIC: &str = "ArtiaPkg";
 
 /// 書き込みに使うアセット情報。
@@ -57,7 +57,7 @@ pub struct PkgWriteInput {
     pub assets: Vec<AssetInput>,
 }
 
-/// Artia 独自 .wallpaper パッケージを ZIP コンテナとして書き出す。
+/// WallBlank 独自 .wallpaper パッケージを ZIP コンテナとして書き出す。
 pub struct PkgWriter;
 
 impl PkgWriter {
@@ -259,7 +259,7 @@ mod tests {
     /// Phase 10E: PkgWriter で書き出したファイルを ZIP リーダーで読み戻し、
     ///            project.json / scene.json / assets/ が同一であることを検証する。
     /// Note: 既存 PkgReader は Wallpaper Engine の .pkg バイナリ専用 (PKGV magic) なので、
-    ///       Artia 独自フォーマットの読み取り検証には ZIP API を直接用いる。
+    ///       WallBlank 独自フォーマットの読み取り検証には ZIP API を直接用いる。
     #[test]
     fn test_round_trip_via_zip_reader() {
         let dir = setup_dir();
@@ -307,7 +307,7 @@ mod tests {
 
         // 既存の Wallpaper Engine PKG リーダーは ArtiaPkg を InvalidMagic として弾くこと
         match PkgReader::open(out.to_str().unwrap()) {
-            Ok(_) => panic!("Artia .wallpaper を旧 PkgReader が成功して開いてしまった"),
+            Ok(_) => panic!("WallBlank .wallpaper を旧 PkgReader が成功して開いてしまった"),
             Err(e) => assert!(matches!(
                 e,
                 crate::pkg_reader::PkgError::InvalidMagic | crate::pkg_reader::PkgError::TooSmall

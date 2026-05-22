@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 4A: ParticleSystemBridge の Codable / FFI ラウンドトリップ検証。
 ///

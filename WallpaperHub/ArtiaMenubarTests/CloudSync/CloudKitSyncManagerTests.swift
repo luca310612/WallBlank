@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 10E: CloudKitSyncManager のレコード変換 + 衝突解決 + オフラインキューを検証する。
 /// CloudKit 実体は呼ばず、`RemoteStore` プロトコルのモックで決定論的に検証。

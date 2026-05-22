@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 11H: CrashReporter のログ書き出しと PII 置換を検証する。
 /// 実シグナルを発生させると XCTest プロセスが落ちるため、
@@ -46,7 +46,7 @@ final class CrashReporterTests: XCTestCase {
     }
 
     func test_pendingLogFiles_filtersOnlyArtiaLogs() throws {
-        // 1) 任意のファイルを Artia ログディレクトリに書く (フィルタ確認用)
+        // 1) 任意のファイルを WallBlank ログディレクトリに書く (フィルタ確認用)
         try? FileManager.default.createDirectory(
             at: CrashReporter.crashLogDirectory,
             withIntermediateDirectories: true

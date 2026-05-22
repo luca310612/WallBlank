@@ -70,7 +70,7 @@ void artia_free_string(char *ptr);
 void artia_free_bytes(uint8_t *ptr, uint32_t len);
 
 /**
- * Artiaのバージョン文字列を返す
+ * WallBlankのバージョン文字列を返す
  * 戻り値は artia_free_string() で解放すること
  */
 char *artia_version(void);
@@ -90,7 +90,7 @@ char *artia_pkg_extract(const char *pkg_path,
                         const char *output_dir);
 
 /**
- * Artia 独自フォーマット (.wallpaper) を書き出す。
+ * WallBlank 独自フォーマット (.wallpaper) を書き出す。
  * `descriptor_json` は以下の JSON:
  * ```json
  * {

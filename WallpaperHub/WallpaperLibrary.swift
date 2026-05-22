@@ -259,7 +259,7 @@ class WallpaperLibrary: ObservableObject {
         // Application Supportが取得できない場合はテンポラリディレクトリをフォールバックとして使用
         let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? fileManager.temporaryDirectory
-        wallpaperDirectory = appSupport.appendingPathComponent("Artia/Wallpapers")
+        wallpaperDirectory = appSupport.appendingPathComponent("WallBlank/Wallpapers")
 
         if appSupport == fileManager.temporaryDirectory {
             debugLog("[Library] アプリケーションサポートディレクトリが取得できません。テンポラリディレクトリを使用します")
@@ -1095,7 +1095,7 @@ class WallpaperLibrary: ObservableObject {
                     DispatchQueue.main.async { completion(.failure(error)) }
                     return
                 }
-                let cacheDir = cachesBase.appendingPathComponent("Artia")
+                let cacheDir = cachesBase.appendingPathComponent("WallBlank")
                 try self.fileManager.createDirectory(at: cacheDir, withIntermediateDirectories: true)
 
                 let baseName = (name as NSString).deletingPathExtension

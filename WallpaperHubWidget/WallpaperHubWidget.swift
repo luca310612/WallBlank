@@ -22,7 +22,7 @@ struct WallpaperTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> WallpaperEntry {
         WallpaperEntry(
             date: Date(),
-            wallpaperName: "Artia",
+            wallpaperName: "WallBlank",
             wallpaperThumbnailPath: nil,
             wallpaperType: "image",
             favorites: [],
@@ -139,7 +139,7 @@ struct ArtiaWidget: Widget {
         StaticConfiguration(kind: kind, provider: WallpaperTimelineProvider()) { entry in
             WallpaperWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Artia")
+        .configurationDisplayName("WallBlank")
         .description("現在の壁紙やお気に入りを表示します")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }

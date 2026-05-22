@@ -1,9 +1,9 @@
 import Foundation
 
-/// Phase 10D: Artia 独自 .wallpaper パッケージ書き出しの Swift エントリ。
+/// Phase 10D: WallBlank 独自 .wallpaper パッケージ書き出しの Swift エントリ。
 ///
 /// Rust 側 `artia_pkg_write` を呼び出し、project.json + scene.json + assets/* を
-/// ZIP コンテナに格納した Artia 独自フォーマット (.wallpaper) を生成する。
+/// ZIP コンテナに格納した WallBlank 独自フォーマット (.wallpaper) を生成する。
 /// Wallpaper Engine の .pkg バイナリとは互換性 100% にはしない方針 (CLAUDE.md 設計判断)。
 enum PkgWriterBridge {
 
@@ -73,7 +73,7 @@ enum PkgWriterBridge {
     }
 
     /// 既存の `WallpaperItem` から書き出す簡易ヘルパー。
-    /// project.json と scene.json は最低限の Artia メタデータで埋める。
+    /// project.json と scene.json は最低限の WallBlank メタデータで埋める。
     /// - Parameters:
     ///   - outputPath: 出力先 (.wallpaper)
     ///   - title: 作品タイトル

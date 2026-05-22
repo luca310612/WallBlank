@@ -499,7 +499,7 @@ struct ImageEditorView: View {
     private func setupWindowCloseInterceptor() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             guard let window = NSApp.windows.first(where: {
-                $0.title == "Artia エディター" || $0.identifier?.rawValue == "editor"
+                $0.title == "WallBlank エディター" || $0.identifier?.rawValue == "editor"
             }) else { return }
 
             let delegate = EditorWindowDelegate(editorManager: editorManager)

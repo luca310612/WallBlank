@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 8.1: RazerChromaClient のテスト。
 /// URLProtocol を差し込んで REST 通信をオフラインでスタブする。

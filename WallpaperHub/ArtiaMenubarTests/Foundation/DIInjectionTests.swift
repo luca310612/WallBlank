@@ -1,6 +1,6 @@
 import XCTest
 import AppKit
-@testable import Artia
+@testable import WallBlank
 
 /// DI が機能していることを最低限確認する基盤テスト。
 /// Why: 各 Protocol の Mock を WallpaperEngine / DisplayWallpaperInstance に注入できることを検証する。

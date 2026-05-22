@@ -1,7 +1,7 @@
 import Foundation
 import AppKit
 import Combine
-@testable import Artia
+@testable import WallBlank
 
 /// DisplayManagerProtocol の Mock 実装。
 /// Why: WallpaperEngine / DisplayWallpaperInstance に注入し、ディスプレイ問い合わせの spy を取れるようにする。

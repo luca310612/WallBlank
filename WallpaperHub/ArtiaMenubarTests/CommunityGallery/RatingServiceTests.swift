@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 10E: RatingService と CommentService のラウンドトリップ。
 /// CommunityGalleryServiceTests と同じ MockFirestore を再利用する。

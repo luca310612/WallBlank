@@ -3,7 +3,7 @@ import Cocoa
 /// Phase 9A: スクリーンセーバー設定シート。
 /// 表示要素:
 ///   - フレームレート切替 (30 / 60)
-///   - "Artia アプリで詳細設定" ボタン (artia:// URL を open する)
+///   - "WallBlank アプリで詳細設定" ボタン (artia:// URL を open する)
 ///
 /// 設定値は App Group の UserDefaults に書き込まれ、ArtiaScreenSaverView が起動時に読み取る。
 final class ArtiaScreenSaverConfigController: NSObject {
@@ -26,7 +26,7 @@ final class ArtiaScreenSaverConfigController: NSObject {
             backing: .buffered,
             defer: false
         )
-        panel.title = "Artia スクリーンセーバー設定"
+        panel.title = "WallBlank スクリーンセーバー設定"
         panel.isReleasedWhenClosed = false
 
         let contentView = NSView(frame: frame)
@@ -44,9 +44,9 @@ final class ArtiaScreenSaverConfigController: NSObject {
         contentView.addSubview(popup)
         self.fpsPopUp = popup
 
-        // 詳細設定ボタン (Artia アプリ起動)
+        // 詳細設定ボタン (WallBlank アプリ起動)
         let openApp = NSButton(frame: NSRect(x: 20, y: 60, width: 280, height: 26))
-        openApp.title = "Artia アプリで壁紙を選ぶ"
+        openApp.title = "WallBlank アプリで壁紙を選ぶ"
         openApp.bezelStyle = .rounded
         contentView.addSubview(openApp)
         self.openAppButton = openApp

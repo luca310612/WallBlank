@@ -2,7 +2,7 @@ import XCTest
 import AppKit
 import CoreGraphics
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 8.3: LedColorMirror の純粋関数を、決定的なテスト画像で検証する。
 final class LedColorMirrorTests: XCTestCase {

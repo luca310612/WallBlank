@@ -2,7 +2,7 @@ import Foundation
 import WebKit
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 3B: Wallpaper Engine 互換 JS API ブリッジが期待通りに振る舞うことを確認する。
 /// - bridge.js が WKWebView 上で評価され `wallpaperRegister*` が定義される

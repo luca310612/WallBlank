@@ -2,7 +2,7 @@ import AppKit
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 3C: ApplicationWallpaperRuntime / WallpaperItem 拡張の挙動を検証するテスト。
 /// - 内製 .bundle (NSPrincipalClass = NSViewController) のロード成功

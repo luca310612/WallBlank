@@ -39,9 +39,9 @@ final class RazerChromaClient: ObservableObject {
 
         static var artiaDefault: ChromaAppInfo {
             ChromaAppInfo(
-                title: "Artia",
-                description: "Artia 壁紙エンジン (macOS) のキーボード/デバイス連動",
-                author: ChromaAuthor(name: "Artia Team", contact: "https://artia.app"),
+                title: "WallBlank",
+                description: "WallBlank 壁紙エンジン (macOS) のキーボード/デバイス連動",
+                author: ChromaAuthor(name: "WallBlank Team", contact: "https://artia.app"),
                 device_supported: ["keyboard", "mouse", "headset", "mousepad", "keypad", "chromalink"],
                 category: "application"
             )

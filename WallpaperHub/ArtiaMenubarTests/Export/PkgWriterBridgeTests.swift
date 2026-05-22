@@ -1,12 +1,12 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 10E: PkgWriterBridge → Rust pkg_writer 経由で .wallpaper を書き出し、
 ///            ZIP として読み戻して同一性を検証する。
 /// 既存 PkgReaderSimple は Wallpaper Engine 形式 (PKGV magic) 専用のため、
-/// Artia 独自 .wallpaper の読み戻しには Foundation の処理を使わず Process unzip で確認する。
+/// WallBlank 独自 .wallpaper の読み戻しには Foundation の処理を使わず Process unzip で確認する。
 final class PkgWriterBridgeTests: XCTestCase {
 
     func test_writeSimple_producesValidZipWithExpectedEntries() throws {
@@ -61,7 +61,7 @@ final class PkgWriterBridgeTests: XCTestCase {
         XCTAssertEqual(dict?["type"] as? String, "scene")
         XCTAssertEqual((dict?["tags"] as? [String]).map(Set.init), Set(["aurora", "夜"]))
 
-        // manifest.json に Artia 独自 magic と version が入っている
+        // manifest.json に WallBlank 独自 magic と version が入っている
         let manifest = try Data(contentsOf: extractDir.appendingPathComponent("manifest.json"))
         let manifestDict = try JSONSerialization.jsonObject(with: manifest) as? [String: Any]
         XCTAssertEqual(manifestDict?["magic"] as? String, "ArtiaPkg")

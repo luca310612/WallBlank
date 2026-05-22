@@ -110,12 +110,12 @@ final class CommunityGalleryService: ObservableObject {
     @Published private(set) var isLoading: Bool = false
     @Published var lastError: String?
 
-    /// ローカルライブラリへの保存先 (デフォルトは Application Support/Artia/Community)
+    /// ローカルライブラリへの保存先 (デフォルトは Application Support/WallBlank/Community)
     var downloadDirectory: URL = {
         let base = FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)
             .first ?? FileManager.default.temporaryDirectory
-        return base.appendingPathComponent("Artia/Community", isDirectory: true)
+        return base.appendingPathComponent("WallBlank/Community", isDirectory: true)
     }()
 
     // MARK: - 初期化

@@ -2,7 +2,7 @@ import Foundation
 import JavaScriptCore
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 5: project.json パース / Codable / Store / SceneScript+Web 連携の検証。
 final class UserPropertiesAutoUITests: XCTestCase {

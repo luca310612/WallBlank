@@ -2,7 +2,7 @@ import Foundation
 import JavaScriptCore
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 // MARK: - Mock backends
 

@@ -23,7 +23,7 @@ class DisplayWallpaperInstance: NSObject {
     var metalView: DroppableMTKView?
     var webWallpaperView: DroppableWKWebView?
     var pendingWebWallpaperView: DroppableWKWebView?
-    /// 音楽プレイヤー型壁紙（難読化 JS が WKWebView で動かないものを Artia ネイティブで再生）
+    /// 音楽プレイヤー型壁紙（難読化 JS が WKWebView で動かないものを WallBlank ネイティブで再生）
     var musicWallpaperHostView: NSView?
     /// 音楽プレイヤー型壁紙の表示中ルート
     var musicWallpaperActiveRoot: URL?

@@ -1,4 +1,4 @@
-// Artia macOS プラットフォーム固有の実装
+// WallBlank macOS プラットフォーム固有の実装
 // NSWorkspace / desktopImageURL API経由で壁紙を設定する
 // 注意: 実際の壁紙設定はSwift側（AppKit）で行い、ここはFFI経由で呼び出す
 

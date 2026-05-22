@@ -1,4 +1,4 @@
-// Artia Windows プラットフォーム固有の実装
+// WallBlank Windows プラットフォーム固有の実装
 // Windows壁紙設定API（SystemParametersInfoW）を使用する
 
 use artia_core::platform::{PlatformError, WallpaperFitMode, WallpaperProvider};

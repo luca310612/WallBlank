@@ -1,5 +1,5 @@
 // Firebase Cloud Messaging (FCM) REST クライアント。
-// Why: Artia は受信側 (APNs 経由) が主用途だが、サーバー連携やテスト用途として
+// Why: WallBlank は受信側 (APNs 経由) が主用途だが、サーバー連携やテスト用途として
 //      "送信" と "トピック購読管理" を Rust から扱える最小実装を提供する。
 //      正規の HTTP v1 API は Service Account の OAuth2 アクセストークンを要求するが、
 //      本フェーズでは AuthClient の id_token を Bearer に流用する簡易実装とする

@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 1.3+: PenToolKind ↔ BrushEngineID マッピング、各エンジンの圧力反応、
 /// および BrushEngineRegistry のフォールバック挙動を検証する。

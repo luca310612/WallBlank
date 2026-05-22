@@ -1,7 +1,7 @@
 import XCTest
 import Foundation
 
-@testable import Artia
+@testable import WallBlank
 
 /// Phase 10E: CommunityGalleryService の publish/list/download ラウンドトリップ。
 /// Firebase 実体には触れず、Firestore / Storage のモック経由で検証する。
