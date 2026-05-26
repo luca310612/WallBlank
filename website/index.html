@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">WallBlank — 生きている macOS 壁紙</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="meta.desc"
+        content="WallBlank は、動画・音楽連動・パーティクル・シェーダなどあらゆる壁紙で Mac のデスクトップを生まれ変わらせる macOS 向け壁紙アプリです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="WallBlank">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">WallBlank</span>
+    </a>
+    <nav class="nav" aria-label="primary">
+      <a href="#features" data-i18n="nav.features">機能</a>
+      <a href="#types" data-i18n="nav.types">壁紙の種類</a>
+      <a href="#smart" data-i18n="nav.smart">スマート機能</a>
+      <a href="#pricing" data-i18n="nav.pricing">料金</a>
+    </nav>
+    <div class="header-actions">
+      <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">
+        <span class="lang-jp">EN</span>
+      </button>
+      <a class="btn btn-sm" href="#download" data-i18n="nav.download">ダウンロード</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <span class="eyebrow" data-i18n="hero.eyebrow">macOS 13 Ventura 以降に対応</span>
+        <h1 class="hero-title" data-i18n="hero.title">デスクトップを、<br>生きた壁紙に。</h1>
+        <p class="hero-sub" data-i18n="hero.sub">
+          動画・音楽連動・パーティクル・シェーダ。WallBlank は Metal と Rust で描く、なめらかで美しい macOS 壁紙アプリです。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#download" data-download>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M16.365 1.43c0 1.14-.467 2.227-1.218 3.02-.806.85-2.12 1.51-3.21 1.426-.137-1.09.42-2.246 1.16-3.02.81-.853 2.21-1.49 3.27-1.426zM20.66 17.16c-.59 1.36-.87 1.96-1.63 3.16-1.06 1.68-2.56 3.77-4.42 3.78-1.65.02-2.08-1.08-4.32-1.07-2.24.01-2.71 1.09-4.36 1.07-1.86-.02-3.28-1.91-4.34-3.59C-1.04 16.9-1.4 11.13 1.34 8.06c.96-1.1 2.34-1.79 3.66-1.79 1.66 0 2.7 1.09 4.07 1.09 1.33 0 2.14-1.09 4.06-1.09 1.18 0 2.43.64 3.32 1.75-2.92 1.6-2.44 5.77.21 7.14z"/></svg>
+            <span data-i18n="hero.ctaPrimary">Mac 用をダウンロード</span>
+          </a>
+          <a class="btn btn-ghost" href="#features">
+            <span data-i18n="hero.ctaSecondary">機能を見る</span>
+          </a>
+        </div>
+        <p class="hero-note" data-i18n="hero.note">無料で利用可能 ・ 30 日間の Pro 体験版付き ・ 日本語/英語対応</p>
+      </div>
+
+      <div class="hero-preview" aria-hidden="true">
+        <div class="window">
+          <div class="window-bar">
+            <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+          </div>
+          <div class="window-body">
+            <div class="wp-grid">
+              <div class="wp-card t-video"><span data-i18n="preview.video">動画</span></div>
+              <div class="wp-card t-audio"><span data-i18n="preview.audio">音楽連動</span></div>
+              <div class="wp-card t-particle"><span data-i18n="preview.particle">パーティクル</span></div>
+              <div class="wp-card t-shader"><span data-i18n="preview.shader">シェーダ</span></div>
+              <div class="wp-card t-parallax"><span data-i18n="preview.parallax">視差</span></div>
+              <div class="wp-card t-web"><span data-i18n="preview.web">Web</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stat band -->
+    <section class="stats" aria-label="highlights">
+      <div class="stat"><strong>7+</strong><span data-i18n="stats.types">壁紙タイプ</span></div>
+      <div class="stat"><strong>15–144</strong><span data-i18n="stats.fps">FPS 可変</span></div>
+      <div class="stat"><strong>10+</strong><span data-i18n="stats.effects">ビジュアルエフェクト</span></div>
+      <div class="stat"><strong>2</strong><span data-i18n="stats.lang">対応言語 (日 / 英)</span></div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="section-head">
+        <h2 data-i18n="features.title">できること</h2>
+        <p data-i18n="features.sub">静止画から、音に反応するインタラクティブな壁紙まで。Mac のデスクトップを思いのままに。</p>
+      </div>
+      <div class="card-grid">
+        <article class="feature">
+          <div class="ic ic-video"></div>
+          <h3 data-i18n="feat.video.t">動画・GIF 壁紙</h3>
+          <p data-i18n="feat.video.d">mp4 / mov / webm / GIF をそのまま壁紙に。お気に入りの映像が常にデスクトップで動きます。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-audio"></div>
+          <h3 data-i18n="feat.audio.t">音楽連動ビジュアライザ</h3>
+          <p data-i18n="feat.audio.d">システム音声を解析し、再生中の音楽に合わせて壁紙がリアルタイムに反応します。(macOS 13+)</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-effects"></div>
+          <h3 data-i18n="feat.effects.t">豊富なエフェクト</h3>
+          <p data-i18n="feat.effects.d">ブラー・グリッチ・色収差・ブルーム・水の波紋・ヒートヘイズなど、10 種類以上のエフェクトを重ねがけ。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-particle"></div>
+          <h3 data-i18n="feat.particle.t">パーティクル演出</h3>
+          <p data-i18n="feat.particle.d">雨や雪のオーバーレイを密度・速度・風・サイズまで細かく調整。季節感のあるデスクトップに。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-editor"></div>
+          <h3 data-i18n="feat.editor.t">壁紙エディタ</h3>
+          <p data-i18n="feat.editor.d">レイヤー・マスク・ブラシ・エフェクトチェーンでオリジナル壁紙を制作。MP4 / GIF / .wallpaper で書き出し。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-gallery"></div>
+          <h3 data-i18n="feat.gallery.t">コミュニティギャラリー</h3>
+          <p data-i18n="feat.gallery.d">世界中のクリエイターの壁紙を閲覧・ダウンロード。自分の作品を公開して評価やコメントをもらえます。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-display"></div>
+          <h3 data-i18n="feat.multi.t">マルチモニター対応</h3>
+          <p data-i18n="feat.multi.d">複数ディスプレイをまたぐスパニング壁紙、ディスプレイごとの個別設定の両方に対応。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-rgb"></div>
+          <h3 data-i18n="feat.rgb.t">RGB ライティング連携</h3>
+          <p data-i18n="feat.rgb.d">Razer Chroma 対応。壁紙の色をキーボードやマウスの LED にリアルタイムで反映します。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-widget"></div>
+          <h3 data-i18n="feat.widget.t">ウィジェット & スクリーンセーバー</h3>
+          <p data-i18n="feat.widget.d">メニューバーから即操作。アイドル時には壁紙をそのままスクリーンセーバーとして表示します。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Wallpaper Types -->
+    <section id="types" class="section section-alt">
+      <div class="section-head">
+        <h2 data-i18n="types.title">あらゆる壁紙に対応</h2>
+        <p data-i18n="types.sub">手持ちの素材も、生成系の壁紙も。読み込めるフォーマットは多彩です。</p>
+      </div>
+      <div class="chips">
+        <span class="chip" data-i18n="types.image">静止画 (JPG / PNG / HEIC)</span>
+        <span class="chip" data-i18n="types.video">動画 (MP4 / MOV / WEBM / AVI)</span>
+        <span class="chip" data-i18n="types.gif">GIF アニメーション</span>
+        <span class="chip" data-i18n="types.shader">シェーダ生成エフェクト</span>
+        <span class="chip" data-i18n="types.web">Web 壁紙</span>
+        <span class="chip" data-i18n="types.music">音楽プレイヤー壁紙</span>
+        <span class="chip" data-i18n="types.scene">Wallpaper Engine シーン</span>
+      </div>
+    </section>
+
+    <!-- Smart features -->
+    <section id="smart" class="section">
+      <div class="section-head">
+        <h2 data-i18n="smart.title">賢く、軽く動く</h2>
+        <p data-i18n="smart.sub">動く壁紙でもバッテリーと作業を邪魔しない。状況を読んで自動で最適化します。</p>
+      </div>
+      <div class="card-grid two">
+        <article class="feature">
+          <div class="ic ic-perf"></div>
+          <h3 data-i18n="smart.perf.t">パフォーマンスプリセット</h3>
+          <p data-i18n="smart.perf.d">Ultra / High / Balanced / 省電力 から選択。FPS (15–144) と解像度 (1–100%) を細かく調整できます。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-pause"></div>
+          <h3 data-i18n="smart.pause.t">インテリジェント自動停止</h3>
+          <p data-i18n="smart.pause.d">他アプリ使用中・全画面表示・高 GPU 負荷・バッテリー駆動を検知し、壁紙を自動で一時停止します。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-schedule"></div>
+          <h3 data-i18n="smart.schedule.t">スケジュール & プレイリスト</h3>
+          <p data-i18n="smart.schedule.d">時間帯に応じた自動切り替えや、順次・ランダム・シャッフル再生のプレイリストに対応。</p>
+        </article>
+        <article class="feature">
+          <div class="ic ic-click"></div>
+          <h3 data-i18n="smart.click.t">デスクトップ操作はそのまま</h3>
+          <p data-i18n="smart.click.d">動く壁紙の上からアイコンやファイルをクリック可能。「デスクトップを表示」にも対応します。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section-alt">
+      <div class="section-head">
+        <h2 data-i18n="pricing.title">料金プラン</h2>
+        <p data-i18n="pricing.sub">まずは無料で。すべての機能は 30 日間じっくり試せます。</p>
+      </div>
+      <div class="price-grid">
+        <article class="price">
+          <h3 data-i18n="price.free.t">Free</h3>
+          <p class="price-amount" data-i18n="price.free.amt">¥0</p>
+          <p class="price-desc" data-i18n="price.free.d">基本的な壁紙機能をずっと無料で。</p>
+          <ul>
+            <li data-i18n="price.free.f1">静止画・動画・GIF 壁紙</li>
+            <li data-i18n="price.free.f2">基本エフェクト</li>
+            <li data-i18n="price.free.f3">ギャラリー閲覧 & ダウンロード</li>
+          </ul>
+          <a class="btn btn-ghost full" href="#download" data-download data-i18n="price.free.cta">ダウンロード</a>
+        </article>
+        <article class="price price-featured">
+          <span class="badge" data-i18n="price.trial.badge">おすすめ</span>
+          <h3 data-i18n="price.trial.t">Pro 体験版</h3>
+          <p class="price-amount" data-i18n="price.trial.amt">30 日間無料</p>
+          <p class="price-desc" data-i18n="price.trial.d">初回起動から 30 日間、Pro の全機能を解放。</p>
+          <ul>
+            <li data-i18n="price.trial.f1">すべてのエフェクトと演出</li>
+            <li data-i18n="price.trial.f2">音楽連動 & パーティクル</li>
+            <li data-i18n="price.trial.f3">エディタ & 書き出し</li>
+            <li data-i18n="price.trial.f4">RGB ライティング連携</li>
+          </ul>
+          <a class="btn btn-primary full" href="#download" data-download data-i18n="price.trial.cta">無料で試す</a>
+        </article>
+        <article class="price">
+          <h3 data-i18n="price.pro.t">Pro</h3>
+          <p class="price-amount" data-i18n="price.pro.amt">買い切り</p>
+          <p class="price-desc" data-i18n="price.pro.d">一度の購入で全機能を永続的に。</p>
+          <ul>
+            <li data-i18n="price.pro.f1">体験版の全機能を無期限で</li>
+            <li data-i18n="price.pro.f2">ギャラリーへの作品公開</li>
+            <li data-i18n="price.pro.f3">クラウド同期</li>
+            <li data-i18n="price.pro.f4">今後のアップデート</li>
+          </ul>
+          <a class="btn btn-ghost full" href="#download" data-download data-i18n="price.pro.cta">購入する</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download" class="download">
+      <div class="download-inner">
+        <h2 data-i18n="dl.title">WallBlank を手に入れよう</h2>
+        <p data-i18n="dl.sub">いつものデスクトップを、毎日見たくなる景色に。macOS 13 Ventura 以降に対応。</p>
+        <a class="btn btn-primary btn-lg" href="#download" data-download>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M16.365 1.43c0 1.14-.467 2.227-1.218 3.02-.806.85-2.12 1.51-3.21 1.426-.137-1.09.42-2.246 1.16-3.02.81-.853 2.21-1.49 3.27-1.426zM20.66 17.16c-.59 1.36-.87 1.96-1.63 3.16-1.06 1.68-2.56 3.77-4.42 3.78-1.65.02-2.08-1.08-4.32-1.07-2.24.01-2.71 1.09-4.36 1.07-1.86-.02-3.28-1.91-4.34-3.59C-1.04 16.9-1.4 11.13 1.34 8.06c.96-1.1 2.34-1.79 3.66-1.79 1.66 0 2.7 1.09 4.07 1.09 1.33 0 2.14-1.09 4.06-1.09 1.18 0 2.43.64 3.32 1.75-2.92 1.6-2.44 5.77.21 7.14z"/></svg>
+          <span data-i18n="dl.cta">Mac 用をダウンロード</span>
+        </a>
+        <p class="dl-meta" data-i18n="dl.meta">Apple Silicon & Intel 対応 ・ 無料ダウンロード</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-mark sm" aria-hidden="true"></span>
+      <span>WallBlank</span>
+    </div>
+    <p class="footer-copy" data-i18n="footer.copy">© 2026 WallBlank. SwiftUI + Metal + Rust で構築。</p>
+    <p class="footer-note" data-i18n="footer.note">macOS は Apple Inc. の商標です。本サイトは Apple とは関係ありません。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
